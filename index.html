@@ -7,7 +7,33 @@
     <title>Halestorm Discography</title>
 </head>
 <body>
-    <h1>Halestorm Discography API</h1>
-    <p>To use this api, please use the following url: </p>
+    <div class="content">
+        <!-- Start your content here. -->
+        <h1>Halestorm Discography API</h1>
+
+        <h2>Enter the name of a Halestorm album below for more information:</h2>
+
+        <input type="text" />
+        <div class="buttons">
+          <button class="sunflower" id="getButton">Get Info</button>
+        </div>
+        
+        <div class="pics-right">
+          <img src="" alt="image here" class="border" id="albumImage" />
+        </div>
+
+        <ul>
+          <li><span>Album Name: </span><span id="albumName"></span></li>
+
+          <li><span>Release Date: </span><span id="albumDate"></span></li>
+
+          <li><span>Album Type: </span><span id="albumType"></span></li>
+
+          <li><span>Peak Chart Position: </span><span id="albumPosition"></span></li>
+        </ul>
+        <!-- End content area. -->
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
