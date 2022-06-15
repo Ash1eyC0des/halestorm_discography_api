@@ -7,6 +7,7 @@ require('dotenv').config()
 
 // Middleware
 app.use(cors())
+app.use(express.static('public'))
 app.use(express.json())
 
 
@@ -30,8 +31,7 @@ MongoClient.connect(dbConnectionStr)
             const albumName = request.params.name
             infoCollection.find({name: albumName}).toArray()
                 .then(results => {
-                    console.log(results)
-                    response.json(results)
+                    response.json(results[0])
                 })
                 .catch(error => console.error(error))
         })
@@ -39,7 +39,6 @@ MongoClient.connect(dbConnectionStr)
         app.get('/albums', (request,response)=>{
             infoCollection.find({}).toArray()
                 .then(results => {
-                    console.log(results)
                     response.json(results)
                 })        
         }) 
@@ -50,7 +49,6 @@ MongoClient.connect(dbConnectionStr)
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)
 })
-
 
 // const albums = {
 //     'time-man': {
