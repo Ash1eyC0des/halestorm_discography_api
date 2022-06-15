@@ -9,11 +9,11 @@ async function apiRequest() {
         const data = await response.json()
         console.log(data)
         
-        document.getElementById("albumName").innerText = data[0].name
-        document.getElementById("albumDate").innerText = data[0].releaseDate
-        document.getElementById("albumType").innerText = data[0].albumType
-        document.getElementById("albumPosition").innerText = data[0].peakPosition
-        document.getElementById("albumImage").src = data[0].image
+        document.getElementById("albumName").innerText = data.name
+        document.getElementById("albumDate").innerText = data.releaseDate
+        document.getElementById("albumType").innerText = data.albumType
+        document.getElementById("albumPosition").innerText = data.peakPosition
+        document.getElementById("albumImage").src = data.image
   } catch (error) {
         console.log(error)
   }
